@@ -74,15 +74,11 @@ body {
 }
 
 .result-container {
-  display: none;
+  display: none; /* hidden by default */
   position: absolute;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-100%, -50%);
   transition: 0.2s;
 }
 .gif-result {
@@ -93,7 +89,6 @@ body {
   font-size: 3.2rem;
   text-align: center;
 }
-
 /* heart loader */
 .cssload-main {
   display: none;
@@ -415,3 +410,4 @@ body {
     border-color: rgb(228, 228, 228);
   }
 }
+
