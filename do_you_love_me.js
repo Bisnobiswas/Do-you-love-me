@@ -1,28 +1,27 @@
 const questionContainer = document.querySelector(".question-container");
-const resultContainer = document.querySelector(".result-container.yes");
+const resultContainer = document.querySelector(".result-container"); // fixed selector
 const gifResult = document.querySelector(".gif-result");
 const heartLoader = document.querySelector(".cssload-main");
 const yesBtn = document.querySelector(".js-yes-btn");
 const noBtn = document.querySelector(".js-no-btn");
 
-// /change the postion of no button
+// Move the No button randomly on hover
 noBtn.addEventListener("mouseover", () => {
   const newX = Math.floor(Math.random() * questionContainer.offsetWidth);
-  const newY = Math.floor(Math.random() * questionContainer.offsetWidth);
+  const newY = Math.floor(Math.random() * questionContainer.offsetHeight);
 
   noBtn.style.left = `${newX}px`;
   noBtn.style.top = `${newY}px`;
 });
 
-// yes button functionality
-
+// Yes button functionality
 yesBtn.addEventListener("click", () => {
-  questionContainer.style.display = "none";
-  heartLoader.style.display = "inherit";
+  questionContainer.style.display = "none";      // hide question
+  heartLoader.style.display = "block";           // show heart loader
 
-  const timeoutId = setTimeout(() => {
-    heartLoader.style.display = "none";
-    resultContainer.style.display = "inherit";
+  setTimeout(() => {
+    heartLoader.style.display = "none";          // hide loader
+    resultContainer.style.display = "block";     // show video + text
     gifResult.play();
   }, 3000);
 });
